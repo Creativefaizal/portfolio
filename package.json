@@ -1,0 +1,13 @@
+{
+  "name": "faizal-ahmed-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Faizal Ahmed's static product design portfolio",
+  "scripts": {
+    "dev": "node preview.cjs",
+    "start": "node preview.cjs",
+    "check": "node scripts/check.cjs",
+    "build": "npm run check"
+  },
+  "engines": { "node": ">=18" }
+}

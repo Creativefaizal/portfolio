@@ -1,0 +1,382 @@
+{
+  "projects": [
+    {
+      "id": 5060,
+      "name": "CR8US",
+      "text": [],
+      "src": "design/project-crus.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 5073,
+      "name": "Agrigence",
+      "text": [],
+      "src": "design/project-agrigence.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 5273,
+      "name": "Deen AI",
+      "text": [],
+      "src": "design/project-deenai.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 5289,
+      "name": "Flow",
+      "text": [],
+      "src": "design/project-flow.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 6217,
+      "name": "Waybuddy",
+      "text": [],
+      "src": "design/project-waybuddy.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 6265,
+      "name": "Meetsync",
+      "text": [],
+      "src": "design/project-meetsync.svg",
+      "width": 1100,
+      "height": 768
+    },
+    {
+      "id": 6281,
+      "name": "Track",
+      "text": [],
+      "src": "design/project-track.svg",
+      "width": 1100,
+      "height": 768
+    }
+  ],
+  "pages": {
+    "cr8us": [
+      {
+        "src": "design/cr8us-0.svg",
+        "width": 1585,
+        "height": 1155.0003662109375
+      },
+      {
+        "src": "design/cr8us-1.svg",
+        "width": 1585,
+        "height": 895.4003295898438
+      },
+      {
+        "src": "design/cr8us-2.svg",
+        "width": 1585,
+        "height": 884.4003295898438
+      },
+      {
+        "src": "design/cr8us-3.svg",
+        "width": 1585,
+        "height": 1162.7005615234375
+      },
+      {
+        "src": "design/cr8us-4.svg",
+        "width": 1585,
+        "height": 1020.8004150390625
+      },
+      {
+        "src": "design/cr8us-5.svg",
+        "width": 1585,
+        "height": 921.8003540039062
+      },
+      {
+        "src": "design/cr8us-6.svg",
+        "width": 1585,
+        "height": 977.13037109375
+      },
+      {
+        "src": "design/cr8us-7.svg",
+        "width": 1585,
+        "height": 676.500244140625
+      },
+      {
+        "src": "design/cr8us-8.svg",
+        "width": 1585,
+        "height": 7143.40283203125
+      },
+      {
+        "src": "design/cr8us-9.svg",
+        "width": 1585,
+        "height": 520.3002319335938
+      },
+      {
+        "src": "design/cr8us-10.svg",
+        "width": 1585,
+        "height": 685.30029296875
+      }
+    ],
+    "agrigence": [
+      {
+        "src": "design/agrigence-0.svg",
+        "width": 1585,
+        "height": 1531.06591796875
+      },
+      {
+        "src": "design/agrigence-1.svg",
+        "width": 1585,
+        "height": 2223.40283203125
+      },
+      {
+        "src": "design/agrigence-2.svg",
+        "width": 1585,
+        "height": 2223.40283203125
+      },
+      {
+        "src": "design/agrigence-3.svg",
+        "width": 1585,
+        "height": 2554.7119140625
+      },
+      {
+        "src": "design/agrigence-4.svg",
+        "width": 1585,
+        "height": 1365.9617919921875
+      },
+      {
+        "src": "design/agrigence-5.svg",
+        "width": 1585,
+        "height": 1676.357666015625
+      },
+      {
+        "src": "design/agrigence-6.svg",
+        "width": 1585,
+        "height": 1228.375
+      },
+      {
+        "src": "design/agrigence-7.svg",
+        "width": 1585,
+        "height": 2187.079833984375
+      },
+      {
+        "src": "design/agrigence-8.svg",
+        "width": 1585,
+        "height": 5407.7119140625
+      },
+      {
+        "src": "design/agrigence-9.svg",
+        "width": 1585,
+        "height": 1241.5833740234375
+      },
+      {
+        "src": "design/agrigence-10.svg",
+        "width": 1585,
+        "height": 460
+      }
+    ],
+    "waybuddy": [
+      {
+        "src": "design/waybuddy-0.svg",
+        "width": 1585,
+        "height": 981.8753662109375
+      },
+      {
+        "src": "design/waybuddy-1.svg",
+        "width": 1585,
+        "height": 1269.5341796875
+      },
+      {
+        "src": "design/waybuddy-2.svg",
+        "width": 1585,
+        "height": 1895.6715087890625
+      },
+      {
+        "src": "design/waybuddy-3.svg",
+        "width": 1585,
+        "height": 2234.150146484375
+      },
+      {
+        "src": "design/waybuddy-4.svg",
+        "width": 1585,
+        "height": 2166.07080078125
+      },
+      {
+        "src": "design/waybuddy-5.svg",
+        "width": 1585,
+        "height": 1169.8125
+      },
+      {
+        "src": "design/waybuddy-6.svg",
+        "width": 1585,
+        "height": 1691.4337158203125
+      },
+      {
+        "src": "design/waybuddy-7.svg",
+        "width": 1585,
+        "height": 1251.3157958984375
+      },
+      {
+        "src": "design/waybuddy-8.svg",
+        "width": 1585,
+        "height": 2150.72900390625
+      },
+      {
+        "src": "design/waybuddy-9.svg",
+        "width": 1585,
+        "height": 2457.56494140625
+      },
+      {
+        "src": "design/waybuddy-10.svg",
+        "width": 1585,
+        "height": 4202.6953125
+      },
+      {
+        "src": "design/waybuddy-11.svg",
+        "width": 1585,
+        "height": 4357.07177734375
+      },
+      {
+        "src": "design/waybuddy-12.svg",
+        "width": 1585,
+        "height": 3959.14404296875
+      },
+      {
+        "src": "design/waybuddy-13.svg",
+        "width": 1585,
+        "height": 3193.0126953125
+      },
+      {
+        "src": "design/waybuddy-14.svg",
+        "width": 1585,
+        "height": 467
+      }
+    ],
+    "flow": [
+      {
+        "src": "design/flow-0.svg",
+        "width": 1585,
+        "height": 619
+      },
+      {
+        "src": "design/flow-1.svg",
+        "width": 1585,
+        "height": 782.59375
+      },
+      {
+        "src": "design/flow-2.svg",
+        "width": 1585,
+        "height": 1751.204833984375
+      },
+      {
+        "src": "design/flow-3.svg",
+        "width": 1585,
+        "height": 2255.322998046875
+      },
+      {
+        "src": "design/flow-4.svg",
+        "width": 1585,
+        "height": 1101.795166015625
+      },
+      {
+        "src": "design/flow-5.svg",
+        "width": 1585,
+        "height": 1780.923583984375
+      },
+      {
+        "src": "design/flow-6.svg",
+        "width": 1585,
+        "height": 6353.20849609375
+      },
+      {
+        "src": "design/flow-7.svg",
+        "width": 1585,
+        "height": 235
+      }
+    ],
+    "meetsync": [
+      {
+        "src": "design/meetsync-0.svg",
+        "width": 1585,
+        "height": 1419.8958740234375
+      },
+      {
+        "src": "design/meetsync-1.svg",
+        "width": 1585,
+        "height": 636.201416015625
+      },
+      {
+        "src": "design/meetsync-2.svg",
+        "width": 1585,
+        "height": 921.28125
+      },
+      {
+        "src": "design/meetsync-3.svg",
+        "width": 1585,
+        "height": 740.767333984375
+      },
+      {
+        "src": "design/meetsync-4.svg",
+        "width": 1585,
+        "height": 1103.99658203125
+      },
+      {
+        "src": "design/meetsync-5.svg",
+        "width": 1585,
+        "height": 617.4895629882812
+      },
+      {
+        "src": "design/meetsync-6.svg",
+        "width": 1585,
+        "height": 784.795166015625
+      },
+      {
+        "src": "design/meetsync-7.svg",
+        "width": 1585,
+        "height": 1516.7569580078125
+      },
+      {
+        "src": "design/meetsync-8.svg",
+        "width": 1585,
+        "height": 713.25
+      },
+      {
+        "src": "design/meetsync-9.svg",
+        "width": 1585,
+        "height": 1358.2569580078125
+      },
+      {
+        "src": "design/meetsync-10.svg",
+        "width": 1585,
+        "height": 2549.208251953125
+      },
+      {
+        "src": "design/meetsync-11.svg",
+        "width": 1585,
+        "height": 2766.045166015625
+      },
+      {
+        "src": "design/meetsync-12.svg",
+        "width": 1585,
+        "height": 8664.6669921875
+      },
+      {
+        "src": "design/meetsync-13.svg",
+        "width": 832.6753540039062,
+        "height": 686.2708740234375
+      },
+      {
+        "src": "design/meetsync-14.svg",
+        "width": 165.1041717529297,
+        "height": 136.07485961914062
+      }
+    ]
+  },
+  "resume": {
+    "src": "design/resume.svg",
+    "width": 1585,
+    "height": 2067
+  },
+  "logo": {
+    "src": "design/logo.svg",
+    "width": 70,
+    "height": 70
+  }
+}
