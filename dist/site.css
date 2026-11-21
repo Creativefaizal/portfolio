@@ -80,10 +80,10 @@ html.pointer-input #menu a:focus,html.pointer-input #menu button:focus{outline:n
 
 /* Keep one header in the same viewport coordinates, including in the modal top layer. */
 html{overflow-y:scroll;scrollbar-gutter:stable}
-.site-header{position:fixed;top:0;left:0;right:var(--scrollbar-inline,0px);width:auto;z-index:40;transition:transform .4s cubic-bezier(.22,1,.36,1),background-color .3s,backdrop-filter .3s;will-change:transform}
+.site-header{position:fixed;top:0;left:0;right:0;width:auto;z-index:40;transition:transform .4s cubic-bezier(.22,1,.36,1),background-color .3s,backdrop-filter .3s;will-change:transform}
 body>.site-header{width:auto}.site-header.nav-hidden{transform:translateY(-110%);pointer-events:none}.site-header.is-scrolled{background:#0c0c0deb;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-dialog#menu{right:var(--scrollbar-inline,0px);width:calc(100% - var(--scrollbar-inline,0px));opacity:1;transform:none;transition:none;overscroll-behavior:contain}
-dialog#menu.is-open{opacity:1;transform:none}#menu::backdrop{right:var(--scrollbar-inline,0px);opacity:1;transition:none}
+dialog#menu{inset:0;width:100%;opacity:1;transform:none;transition:none;overscroll-behavior:contain}
+dialog#menu.is-open{opacity:1;transform:none}#menu::backdrop{inset:0;opacity:1;transition:none}
 html.pointer-input .site-header a:focus,html.pointer-input .site-header button:focus{outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
 
 /* Live project actions sit between case-study artwork and the related work. */
@@ -93,3 +93,12 @@ html.pointer-input .site-header a:focus,html.pointer-input .site-header button:f
 .case-live-link:hover,.case-live-link:focus-visible{color:var(--accent);border-bottom-color:var(--accent);background:#afa0ff0d}
 .case-live-link:hover .ui-icon,.case-live-link:focus-visible .ui-icon{transform:translate(3px,-3px)}
 @media(max-width:600px){.case-live-actions{padding-top:28px;padding-bottom:8px}.case-live-link{font-size:18px;gap:10px}.case-live-actions+.more-work{padding-top:32px}}
+
+/* Fit links below the stationary header, even on short desktop and landscape screens. */
+:root{--menu-header-height:130px}
+dialog#menu{padding:var(--menu-header-height) 0 0;overflow:hidden}
+#menu nav{height:100%;min-height:0;padding:24px 20px 32px;overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start;gap:25px;gap:clamp(12px,3svh,25px)}
+#menu nav>a{flex-shrink:0;font-size:clamp(42px,10.1vw,160px);font-size:clamp(42px,min(10.1vw,15svh),160px)}
+#menu nav>a:first-child{margin-top:auto}#menu nav>a:last-child{margin-bottom:auto}
+@media(max-width:1100px){:root{--menu-header-height:95px}}
+@media(max-width:600px){#menu nav>a{font-size:clamp(42px,15vw,80px);font-size:clamp(42px,min(15vw,15svh),80px)}}
