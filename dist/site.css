@@ -85,3 +85,11 @@ body>.site-header{width:auto}.site-header.nav-hidden{transform:translateY(-110%)
 dialog#menu{right:var(--scrollbar-inline,0px);width:calc(100% - var(--scrollbar-inline,0px));opacity:1;transform:none;transition:none;overscroll-behavior:contain}
 dialog#menu.is-open{opacity:1;transform:none}#menu::backdrop{right:var(--scrollbar-inline,0px);opacity:1;transition:none}
 html.pointer-input .site-header a:focus,html.pointer-input .site-header button:focus{outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}
+
+/* Live project actions sit between case-study artwork and the related work. */
+.case-live-actions{display:flex;justify-content:flex-end;padding:40px var(--pad) 20px}
+.case-live-link{display:inline-flex;align-items:center;gap:12px;padding:5px 0 8px;border-bottom:1px solid var(--line);font-size:clamp(18px,1.515vw,24px);line-height:1.35;transition:color .25s,border-color .25s,background-color .25s}
+.case-live-link i{color:var(--accent)}.case-live-link .ui-icon{width:21px;height:21px;transition:transform .3s}
+.case-live-link:hover,.case-live-link:focus-visible{color:var(--accent);border-bottom-color:var(--accent);background:#afa0ff0d}
+.case-live-link:hover .ui-icon,.case-live-link:focus-visible .ui-icon{transform:translate(3px,-3px)}
+@media(max-width:600px){.case-live-actions{padding-top:28px;padding-bottom:8px}.case-live-link{font-size:18px;gap:10px}.case-live-actions+.more-work{padding-top:32px}}
