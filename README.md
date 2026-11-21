@@ -61,4 +61,4 @@ Domain instructions: https://vercel.com/docs/domains/working-with-domains/add-a-
 
 ## Current behavior
 
-The desktop gallery supports click-and-drag, floating arrows over the covers, and the controls below. Normal clicks open projects; dragging does not. Desktop cards scale with viewport height. Mobile retains native horizontal swiping. Videos play muted and loop only while visible. Text dust supports mouse movement and touch rubbing; reduced-motion preferences are respected. Reloading any page resets it to the top, including a URL that previously had an anchor.
+The desktop gallery supports click-and-drag, floating arrows over the covers, and the controls below. Normal clicks open projects; dragging does not. Project covers use their original proportional sizing. Mobile retains native horizontal swiping. Videos play muted and loop only while visible. Text dust supports mouse movement and touch rubbing; reduced-motion preferences are respected. Reloading any page resets it to the top, including a URL that previously had an anchor.

@@ -23,9 +23,6 @@ for(const gallery of document.querySelectorAll('.project-gallery')){
  gallery.addEventListener('click',event=>{if(event.detail>0&&performance.now()<suppressUntil){event.preventDefault();event.stopPropagation()}},true);
  gallery.addEventListener('scroll',updateControls,{passive:true});new ResizeObserver(updateControls).observe(gallery);new ResizeObserver(updateControls).observe(gallery.querySelector('.project-cover'));updateControls();
 }
-// Keep the full desktop work presentation within the available screen height.
-const workSection=document.querySelector('.home-page .work');
-if(workSection){let sizingFrame=0;const fitWork=()=>{sizingFrame=0;if(innerWidth<901){workSection.style.removeProperty('--gallery-fit-width');return}const cover=workSection.querySelector('.project-cover'),overhead=workSection.getBoundingClientRect().height-cover.getBoundingClientRect().height;const width=Math.min(innerWidth*.63594,Math.max(160,innerHeight-overhead-88)*1100/666);if(Math.abs(parseFloat(workSection.style.getPropertyValue('--gallery-fit-width'))-width)>1||!workSection.style.getPropertyValue('--gallery-fit-width'))workSection.style.setProperty('--gallery-fit-width',width.toFixed(2)+'px')};const queueFit=()=>{if(!sizingFrame)sizingFrame=requestAnimationFrame(fitWork)};new ResizeObserver(queueFit).observe(workSection);window.addEventListener('resize',queueFit,{passive:true});document.fonts.ready.then(queueFit);fitWork()}
 const playground=document.querySelector('#pixel-playground');
 if(playground){
  const bodies=[];let size=195,w=0,h=0,drag=null,lastTime=0,frame=0,awake=false,visible=true,pointer={x:-9999,y:-9999,t:0};

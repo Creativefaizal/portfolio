@@ -1,0 +1,12 @@
+node_modules/
+.vercel/
+.openai/
+.env
+.env.*
+*.log
+*.tar.gz
+*.zip
+# Keep large Figma originals on your PC; the exported website assets are in dist/.
+*.fig
+.DS_Store
+Thumbs.db
