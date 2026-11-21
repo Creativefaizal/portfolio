@@ -77,3 +77,11 @@ html.pointer-input #menu a:focus,html.pointer-input #menu button:focus{outline:n
 }
 @media(min-width:901px) and (max-width:1100px){.home-page .work{scroll-margin-top:-86px}}
 .home-page .work .gallery-controls{opacity:1;transform:none}
+
+/* Keep one header in the same viewport coordinates, including in the modal top layer. */
+html{overflow-y:scroll;scrollbar-gutter:stable}
+.site-header{position:fixed;top:0;left:0;right:var(--scrollbar-inline,0px);width:auto;z-index:40;transition:transform .4s cubic-bezier(.22,1,.36,1),background-color .3s,backdrop-filter .3s;will-change:transform}
+body>.site-header{width:auto}.site-header.nav-hidden{transform:translateY(-110%);pointer-events:none}.site-header.is-scrolled{background:#0c0c0deb;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+dialog#menu{right:var(--scrollbar-inline,0px);width:calc(100% - var(--scrollbar-inline,0px));opacity:1;transform:none;transition:none;overscroll-behavior:contain}
+dialog#menu.is-open{opacity:1;transform:none}#menu::backdrop{right:var(--scrollbar-inline,0px);opacity:1;transition:none}
+html.pointer-input .site-header a:focus,html.pointer-input .site-header button:focus{outline:none;box-shadow:none;-webkit-tap-highlight-color:transparent}

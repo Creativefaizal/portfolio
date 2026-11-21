@@ -6,13 +6,24 @@ const markPointerInput=()=>document.documentElement.classList.add('pointer-input
 document.addEventListener('pointerdown',markPointerInput,true);
 document.addEventListener('touchstart',markPointerInput,{capture:true,passive:true});
 document.addEventListener('keydown',event=>{if(!event.metaKey&&!event.altKey&&!event.ctrlKey)document.documentElement.classList.remove('pointer-input')},true);
-let menuClosing=false,menuTimer;
-function openMenu(){if(menu.open)return;clearTimeout(menuTimer);menuClosing=false;header.classList.remove('nav-hidden');menu.showModal();menu.querySelector('.close-menu').focus({preventScroll:true});document.body.classList.add('menu-open');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';requestAnimationFrame(()=>requestAnimationFrame(()=>menu.classList.add('is-open')));document.dispatchEvent(new Event('menuvisibilitychange'));}
-function finishClose(){menu.close();menuClosing=false;document.body.classList.remove('menu-open');document.body.style.overflow='';toggle.setAttribute('aria-expanded','false');document.dispatchEvent(new Event('menuvisibilitychange'));}
-function closeMenu(){if(!menu.open||menuClosing)return;menuClosing=true;menu.classList.remove('is-open');document.body.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');if(reducedMotion.matches)finishClose();else menuTimer=setTimeout(finishClose,450);}
-toggle.addEventListener('click',openMenu);menu.querySelector('.close-menu').addEventListener('click',closeMenu);
-menu.addEventListener('cancel',e=>{e.preventDefault();closeMenu()});menu.addEventListener('close',()=>{clearTimeout(menuTimer);menu.classList.remove('is-open');document.body.classList.remove('menu-open');document.body.style.overflow='';toggle.setAttribute('aria-expanded','false');});
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',e=>{const destination=new URL(a.href,location.href);if(destination.origin===location.origin){e.preventDefault();closeMenu();setTimeout(()=>{location.href=a.href},reducedMotion.matches?0:450);}else closeMenu();}));
+// Reuse the actual page header inside the modal top layer, without replacing its nodes.
+const headerHome=document.createComment('site-header-home');header.before(headerHome);
+let menuClosing=false,menuTimer,lockedScrollY=0;
+function updateScrollbarGap(){document.documentElement.style.setProperty('--scrollbar-inline',Math.max(0,innerWidth-document.documentElement.clientWidth)+'px')}
+updateScrollbarGap();window.addEventListener('resize',updateScrollbarGap,{passive:true});
+function restoreHeader(){headerHome.after(header);document.body.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu')}
+function openMenu(){if(menu.open){if(menuClosing){clearTimeout(menuTimer);menuClosing=false;document.body.classList.add('menu-open');toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Close menu');menu.classList.add('is-open')}return}clearTimeout(menuTimer);menuClosing=false;lockedScrollY=window.scrollY;updateScrollbarGap();header.classList.remove('nav-hidden');menu.prepend(header);menu.showModal();toggle.focus({preventScroll:true});document.body.classList.add('menu-open');toggle.setAttribute('aria-expanded','true');toggle.setAttribute('aria-label','Close menu');requestAnimationFrame(()=>requestAnimationFrame(()=>menu.classList.add('is-open')));document.dispatchEvent(new Event('menuvisibilitychange'))}
+function finishClose(){menuClosing=false;restoreHeader();menu.close();toggle.focus({preventScroll:true});document.dispatchEvent(new Event('menuvisibilitychange'))}
+function closeMenu(){if(!menu.open||menuClosing)return;menuClosing=true;menu.classList.remove('is-open');document.body.classList.remove('menu-open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu');if(reducedMotion.matches)finishClose();else menuTimer=setTimeout(finishClose,450)}
+toggle.addEventListener('click',()=>{if(menu.open&&!menuClosing)closeMenu();else openMenu()});
+menu.addEventListener('cancel',event=>{event.preventDefault();closeMenu()});
+menu.addEventListener('close',()=>{clearTimeout(menuTimer);menuClosing=false;menu.classList.remove('is-open');restoreHeader()});
+function followMenuLink(event){const link=event.currentTarget,destination=new URL(link.href,location.href);if(destination.origin===location.origin){event.preventDefault();closeMenu();setTimeout(()=>{location.href=link.href},reducedMotion.matches?0:450)}else closeMenu()}
+menu.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',followMenuLink));header.querySelector('.logo').addEventListener('click',event=>{if(menu.open)followMenuLink(event)});
+// Keep the real page scrollbar visible; stop background scrolling rather than removing overflow.
+function containMenuScroll(event){if(menu.open&&menu.scrollHeight<=menu.clientHeight+1)event.preventDefault()}
+document.addEventListener('wheel',containMenuScroll,{passive:false});document.addEventListener('touchmove',containMenuScroll,{passive:false});
+window.addEventListener('scroll',()=>{if(menu.open&&Math.abs(window.scrollY-lockedScrollY)>.5)window.scrollTo({top:lockedScrollY,left:0,behavior:'instant'})},{passive:true});
 let lastScroll=Math.max(0,window.scrollY),direction=0,travel=0,scrollFrame=0;
 function updateNav(){scrollFrame=0;const y=Math.max(0,window.scrollY),delta=y-lastScroll;header.classList.toggle('is-scrolled',y>40);if(!menu.open&&Math.abs(delta)>1){const next=delta>0?1:-1;if(next!==direction){travel=0;direction=next;}travel+=Math.abs(delta);if(y<80)header.classList.remove('nav-hidden');else if(travel>12)header.classList.toggle('nav-hidden',direction>0);}lastScroll=y;}
 window.addEventListener('scroll',()=>{if(!scrollFrame)scrollFrame=requestAnimationFrame(updateNav)},{passive:true});updateNav();header.addEventListener('focusin',()=>header.classList.remove('nav-hidden'));
