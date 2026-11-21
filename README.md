@@ -1,6 +1,6 @@
 # Faizal Ahmed — Portfolio
 
-Complete, self-contained website source. HTML, CSS, JavaScript, images, videos, logo, favicon, and résumé PDF are included. No database, API keys, paid libraries, or ChatGPT hosting connection is required to run it.
+Portfolio source code and deployment configuration. New images, videos, and the resume PDF are kept in the complete local Desktop copy rather than added to this repository. No database, API keys, paid libraries, or ChatGPT hosting connection is required.
 
 ## Open locally
 
