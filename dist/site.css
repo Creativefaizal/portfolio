@@ -38,7 +38,7 @@ dialog#menu{opacity:0;transform:translateY(-22px);transition:opacity .4s ease,tr
 /* Set the initial state before the first paint; Web Animations owns the reveal. */
 .hero-pending .home-page .hero>.portrait,.hero-pending .home-page .hero>.welcome,.hero-pending .home-page .hero>h1,.hero-pending .home-page .hero>.design,.hero-pending .home-page .hero>.title{opacity:0;transform:translate3d(0,100px,0)}
 .hero-entrance-running .hero>.portrait,.hero-entrance-running .hero>.welcome,.hero-entrance-running .hero>h1,.hero-entrance-running .hero>.design,.hero-entrance-running .hero>.title{will-change:transform,opacity}
-.dust-ink{display:block;position:relative;pointer-events:none}.contact-heading>.dust-ink{position:relative;right:auto;top:auto;font-size:inherit;line-height:inherit}.text-dust-canvas{position:fixed;inset:0;pointer-events:none;width:100%;height:100%;z-index:35}.hero h1>.dust-ink,.hero .design>.dust-ink{white-space:inherit}
+.dust-ink{display:block;position:relative;pointer-events:none;padding:.12em;margin:-.12em}.contact-heading>.dust-ink{position:relative;right:auto;top:auto;font-size:inherit;line-height:inherit}.text-dust-canvas{position:fixed;inset:0;pointer-events:none;width:100%;height:100%;z-index:35}.hero h1>.dust-ink,.hero .design>.dust-ink{white-space:inherit}
 @media(prefers-reduced-motion:reduce){.hero-pending .home-page .hero>*{opacity:1;transform:none}.text-dust-canvas{display:none}.dust-ink{mask-image:none!important;-webkit-mask-image:none!important}}
 
 .hero{overflow-anchor:none}body.hero-entrance-running{overflow-anchor:none}
@@ -97,8 +97,11 @@ html.pointer-input .site-header a:focus,html.pointer-input .site-header button:f
 /* Fit links below the stationary header, even on short desktop and landscape screens. */
 :root{--menu-header-height:130px}
 dialog#menu{padding:var(--menu-header-height) 0 0;overflow:hidden}
-#menu nav{height:100%;min-height:0;padding:24px 20px 32px;overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start;gap:25px;gap:clamp(12px,3svh,25px)}
+#menu nav{height:100%;min-height:0;padding:24px 20px 32px;overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start;gap:36px;gap:clamp(20px,4.5svh,40px)}
 #menu nav>a{flex-shrink:0;font-size:clamp(42px,10.1vw,160px);font-size:clamp(42px,min(10.1vw,15svh),160px)}
 #menu nav>a:first-child{margin-top:auto}#menu nav>a:last-child{margin-bottom:auto}
 @media(max-width:1100px){:root{--menu-header-height:95px}}
 @media(max-width:600px){#menu nav>a{font-size:clamp(42px,15vw,80px);font-size:clamp(42px,min(15vw,15svh),80px)}}
+
+/* The same header stays transparent throughout the menu's opening and closing. */
+#menu .site-header{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;transition:transform .4s cubic-bezier(.22,1,.36,1)}
