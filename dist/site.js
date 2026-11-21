@@ -1,5 +1,11 @@
 const menu=document.querySelector('#menu'),toggle=document.querySelector('.menu-toggle'),header=document.querySelector('body>header');
 const reducedMotion=matchMedia('(prefers-reduced-motion:reduce)');
+// Safari may mark programmatic dialog focus as focus-visible after a tap.
+// Track input explicitly so keyboard focus stays visible without drawing a box on taps.
+const markPointerInput=()=>document.documentElement.classList.add('pointer-input');
+document.addEventListener('pointerdown',markPointerInput,true);
+document.addEventListener('touchstart',markPointerInput,{capture:true,passive:true});
+document.addEventListener('keydown',event=>{if(!event.metaKey&&!event.altKey&&!event.ctrlKey)document.documentElement.classList.remove('pointer-input')},true);
 let menuClosing=false,menuTimer;
 function openMenu(){if(menu.open)return;clearTimeout(menuTimer);menuClosing=false;header.classList.remove('nav-hidden');menu.showModal();menu.querySelector('.close-menu').focus({preventScroll:true});document.body.classList.add('menu-open');toggle.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';requestAnimationFrame(()=>requestAnimationFrame(()=>menu.classList.add('is-open')));document.dispatchEvent(new Event('menuvisibilitychange'));}
 function finishClose(){menu.close();menuClosing=false;document.body.classList.remove('menu-open');document.body.style.overflow='';toggle.setAttribute('aria-expanded','false');document.dispatchEvent(new Event('menuvisibilitychange'));}
