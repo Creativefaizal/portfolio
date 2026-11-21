@@ -10,3 +10,15 @@ node_modules/
 *.fig
 .DS_Store
 Thumbs.db
+
+# Keep new media local; GitHub contains the code update only.
+dist/assets/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.gif
+*.mp4
+*.webm
+*.mov
+*.pdf

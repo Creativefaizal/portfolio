@@ -62,3 +62,8 @@ Domain instructions: https://vercel.com/docs/domains/working-with-domains/add-a-
 ## Current behavior
 
 The desktop gallery supports click-and-drag, floating arrows over the covers, and the controls below. Normal clicks open projects; dragging does not. Project covers use their original proportional sizing. Mobile retains native horizontal swiping. Videos play muted and loop only while visible. Text dust supports mouse movement and touch rubbing; reduced-motion preferences are respected. Reloading any page resets it to the top, including a URL that previously had an anchor.
+
+## Media in this GitHub copy
+
+This repository update contains code and configuration only. New images, videos, and the resume PDF are intentionally excluded. The complete local copy in your Desktop portfolio folder contains those files. Restore the media under dist/assets before running the full asset validation or deploying a complete copy of the site. Existing tracked artwork has been left unchanged.
+
